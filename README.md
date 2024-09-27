@@ -6,5 +6,6 @@ Try to sync with https://www.keyboard-layout-editor.com/#/gists/38ead661a787c4e6
 
 - https://github.com/db-ok/SofleChocWireless
 - https://github.com/josefadamcik/SofleKeyboard
+- https://www.sanketsjournal.com/articles/20230127-iris-lily-sofle
 - https://docs.google.com/document/d/1LYpSOz_mN4izxShC2xe-vnnLOXIpN1oUzi7Y_iqapX0/edit
 - https://docs.google.com/spreadsheets/d/1TcawYIeJuJFngt79vqJfp-hcotoWST2zTp0aeLsHAUo/edit?gid=0#gid=0
