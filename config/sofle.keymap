@@ -15,17 +15,25 @@
     combos {
         compatible = "zmk,combos";
 
-        ESC_1 {
+        combo_escape {
             bindings = <&kp ESCAPE>;
             key-positions = <0 1>;
         };
+
         combo_bootloader_left {
             bindings = <&bootloader>;
             key-positions = <2 3 4 5>;
         };
+
         combo_bootloader_right {
             bindings = <&bootloader>;
             key-positions = <6 7 8 9>;
+        };
+
+        combo_config_layer {
+            bindings = <&mo 3>;
+            key-positions = <53 56>;
+            slow-release;
         };
     };
 
@@ -96,18 +104,38 @@
         super_layer {
             // Layer 2 `$mo 2` - SUPER Layer
             // ------------------------------------------------------------------------------------------------------------
-            // |BTCLR| BT1  | BT2  |  BT3  |  BT4  |BOOTL |                  |BOOTL |      |       |      |       |       |
-            // |     | Q    |  W   |   E   |   R   |      |                  |      | VOL- | VOL+  | BRI- | BRI+  |       |
-            // |     | A    |  S   |   D   |   F   |      |                  |      |   <- |   v   |  ^   |  ->   |       |
+            // |     |      |      |       |       |      |                  |      |      |       |      |       |       |
+            // |     | Q    |  W   |   E   |   R   |  T   |                  |      | VOL- | VOL+  | BRI- | BRI+  |       |
+            // |     | A    |  S   |   D   |   F   |  G   |                  |      |   <- |   v   |  ^   |  ->   |       |
             // |     | Z    |  X   |   C   |   V   |  B   |       |  |       |      | HOME | PGDN  | PGUP |  END  |       |
             //              |      |       |       |      |       |  |       |      |      |       |      |
 
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bootloader                    &bootloader  &trans        &trans        &trans        &trans        &trans
-&trans      &mt RCMD Q    &mt RCMD W    &mt RCMD E    &mt RCMD R    &trans                         &trans       &kp C_VOL_DN  &kp C_VOL_UP  &kp C_BRI_DN  &kp C_BRI_UP  &trans
-&trans      &mt RCMD A    &mt RCMD S    &mt RCMD D    &mt RCMD F    &trans                         &mt LCMD H   &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &mt LCMD SQT
-&trans      &mt RCMD Z    &mt RCMD X    &mt RCMD C    &mt RCMD V    &mt RCMD B   &trans    &trans  &trans       &kp HOME      &kp PG_DN     &kp PG_UP     &kp END       &trans
-                          &trans        &trans        &trans        &trans       &trans    &trans  &trans       &trans        &trans        &trans
+&trans  &trans     &trans     &trans     &trans     &trans                       &trans     &trans        &trans        &trans        &trans        &trans
+&trans  &kp RG(Q)  &kp RG(W)  &kp RG(E)  &kp RG(R)  &kp RG(T)                    &kp RG(Y)  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_BRI_DN  &kp C_BRI_UP  &trans
+&trans  &kp RG(A)  &kp RG(S)  &kp RG(D)  &kp RG(F)  &kp RG(G)                    &kp RG(H)  &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &kp RG(S)
+&trans  &kp RG(Z)  &kp RG(X)  &kp RG(C)  &kp RG(V)  &kp RG(B)  &trans    &trans  &trans     &kp HOME      &kp PG_DN     &kp PG_UP     &kp END       &trans
+                   &trans     &trans     &trans     &trans     &trans    &trans  &trans     &trans        &trans        &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_BRI_UP C_BRI_DN>;
+        };
+
+        config_layer {
+            // Layer 3 `$mo 2` - CONFIG Layer
+            // ------------------------------------------------------------------------------------------------------------
+            // |BTCLR| BT1  | BT2  |  BT3  |  BT4  |      |                  |      |      |       |      |       |       |
+            // |     |      |      |       |       |      |                  |      |      |       |      |       |       |
+            // |     |      |      |       |       |      |                  |      |      |       |      |       |       |
+            // |     |      |      |       |       |      |       |  |       |      |      |       |      |       |       |
+            //              |      |       |       |      |       |  |       |      |      |       |      |
+
+            bindings = <
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans      &trans        &trans        &trans        &trans        &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans      &trans        &trans        &trans        &trans        &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans      &trans        &trans        &trans        &trans        &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                          &trans        &trans        &trans        &trans  &trans    &trans  &trans  &trans  &trans  &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_BRI_UP C_BRI_DN>;
