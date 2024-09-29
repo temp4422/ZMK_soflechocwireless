@@ -3,8 +3,8 @@
  *
  * SPDX-License-Identifier: MIT
  */
-
 // My Sofle v2 keymap
+// Generated with https://nickcoutsos.github.io/keymap-editor/
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -24,25 +24,28 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer { // Layer 0 BASE Layer
+        default_layer {
+            // Layer 0 BASE Layer
             // ------------------------------------------------------------------------------------------------------------
             // |  `    |  1  |  2   |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   | BKSPC |
             // |  TAB  |  Q  |  W   |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   \   |
             // |  ESC  |  A  |  S   |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
             // | SHIFT |  Z  |  X   |  C   |  V   |  B   |  MUTE  |  | ExtPw |  N   |  M    |  ,    |  .   |   /   | SHIFT |
             //               |LCTRL | LALT | LCMD |SYMBOL|  ENTER |  | SPACE |SUPER | RCMD  | RALT  |RCTRL |
+
             bindings = <
-&kp GRAVE  &kp N1  &kp N2    &kp N3    &kp N4    &kp N5                                    &kp N6  &kp N7     &kp N8     &kp N9    &kp N0    &kp BSPC
-&kp TAB    &kp Q   &kp W     &kp E     &kp R     &kp T                                     &kp Y   &kp U      &kp I      &kp O     &kp P     &kp BSLH
-&kp ESC    &kp A   &kp S     &kp D     &kp F     &kp G                                     &kp H   &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z   &kp X     &kp C     &kp V     &kp B    &kp C_MUTE    &ext_power EP_TOG  &kp N   &kp M      &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-                   &kp LCTRL &kp LALT  &kp LCMD  &mo 1    &kp RET       &kp SPACE          &mo 2   &kp RCMD   &kp RALT   &kp RCTRL
+&kp GRAVE  &kp N1  &kp N2     &kp N3    &kp N4    &kp N5                                   &kp N6  &kp N7    &kp N8     &kp N9     &kp N0    &kp BSPC
+&kp TAB    &kp Q   &kp W      &kp E     &kp R     &kp T                                    &kp Y   &kp U     &kp I      &kp O      &kp P     &kp BSLH
+&kp ESC    &kp A   &kp S      &kp D     &kp F     &kp G                                    &kp H   &kp J     &kp K      &kp L      &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z   &kp X      &kp C     &kp V     &kp B   &kp C_MUTE    &ext_power EP_TOG  &kp N   &kp M     &kp COMMA  &kp DOT    &kp FSLH  &kp RSHFT
+                   &kp LCTRL  &kp LALT  &kp LCMD  &mo 1   &kp RET       &kp SPACE          &mo 2   &kp RCMD  &kp RALT   &kp RCTRL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_BRI_UP C_BRI_DN>;
         };
 
-        symbol_layer { // Layer 1 `$mo 1` - SYMBOL Layer
+        symbol_layer {
+            // Layer 1 `$mo 1` - SYMBOL Layer
             // TODO: Some binds are waiting for shifted keycode support.
             // ------------------------------------------------------------------------------------------------------------
             // |  `    |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  |       |
@@ -50,17 +53,19 @@
             // |       |  _ |   -  |  +   |  =   |  #   |                   |  &   |   :   |   (   |   )  |   ;   |   '   |
             // |       |  ? |   %  |  $   |  *   |  @   |        |  |       |  ~   |   "   |   ,   |   .  |   /   |       |
             //              |      |      |      |      |        |  |       |      |       |       |      |
+
             bindings = <
-&kp GRAVE    &kp F1     &kp F2     &kp F3    &kp F4     &kp F5                      &kp F6     &kp F7     &kp F8     &kp F9    &kp F10   &trans
-&trans       &kp EXCL   &kp LT     &kp GT    &kp CARET  &kp HASH                    &kp PIPE   &kp LBRC   &kp RBRC   &kp LBKT  &kp RBKT  &kp BSLH
-&trans       &kp UNDER  &kp MINUS  &kp PLUS  &kp EQUAL  &kp HASH                    &kp AMPS   &kp COLON  &kp LPAR   &kp RPAR  &kp SEMI  &kp SQT
-&trans       &kp QMARK  &kp PRCNT  &kp DLLR  &kp ASTRK  &kp AT    &trans    &trans  &kp TILDE  &kp DQT    &kp COMMA  &kp DOT   &kp FSLH  &trans
-                        &trans     &trans    &trans     &trans    &trans    &trans  &trans     &trans     &trans     &trans
-             >;
+&kp GRAVE  &kp F1     &kp F2     &kp F3    &kp F4     &kp F5                             &kp F6     &kp F7     &kp F8     &kp F9    &kp F10   &trans
+&trans     &kp EXCL   &kp LT     &kp GT    &kp CARET  &kp HASH                           &kp PIPE   &kp LBRC   &kp RBRC   &kp LBKT  &kp RBKT  &kp BSLH
+&trans     &kp UNDER  &kp MINUS  &kp PLUS  &kp EQUAL  &kp HASH                           &kp AMPS   &kp COLON  &kp LPAR   &kp RPAR  &kp SEMI  &kp SQT
+&trans     &kp QMARK  &kp PRCNT  &kp DLLR  &kp ASTRK  &kp AT    &trans    &trans         &kp TILDE  &kp DQT    &kp COMMA  &kp DOT   &kp FSLH  &trans
+                      &trans     &trans    &trans     &trans    &trans    &kp BACKSPACE  &trans     &trans     &trans     &trans
+            >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_BRI_UP C_BRI_DN>;
         };
-/* Mostly default
+
+        /* Mostly default
         raise_layer {
             // ------------------------------------------------------------------------------------------------------------
             // |BTCLR| BT1  | BT2  |  BT3  |  BT4  |  BT5 |                  |      |      |       |      |       |       |
@@ -80,19 +85,21 @@
         };
 */
 
-        super_layer { // Layer 2 `$mo 2` - SUPER Layer
+        super_layer {
+            // Layer 2 `$mo 2` - SUPER Layer
             // ------------------------------------------------------------------------------------------------------------
             // |BTCLR| BT1  | BT2  |  BT3  |  BT4  |BOOTL |                  |BOOTL |      |       |      |       |       |
             // |     | Q    |  W   |   E   |   R   |      |                  |      | VOL- | VOL+  | BRI- | BRI+  |       |
             // |     | A    |  S   |   D   |   F   |      |                  |      |   <- |   v   |  ^   |  ->   |       |
             // |     | Z    |  X   |   C   |   V   |  B   |       |  |       |      | HOME | PGDN  | PGUP |  END  |       |
             //              |      |       |       |      |       |  |       |      |      |       |      |
+
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bootloader                     &bootloader &trans       &trans       &trans       &trans       &trans
-&trans      &mt RCMD Q    &mt RCMD W    &mt RCMD E    &mt RCMD R    &trans                          &trans      &kp C_VOL_DN &kp C_VOL_UP &kp C_BRI_DN &kp C_BRI_UP &trans
-&trans      &mt RCMD A    &mt RCMD S    &mt RCMD D    &mt RCMD F    &trans                          &mt LCMD H  &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &mt LCMD SQT
-&trans      &mt RCMD Z    &mt RCMD X    &mt RCMD C    &mt RCMD V    &mt RCMD B    &trans    &trans  &trans      &kp HOME     &kp PG_DN    &kp PG_UP    &kp END      &trans
-                          &trans        &trans        &trans        &trans        &trans    &trans  &trans      &trans       &trans       &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bootloader                    &bootloader  &trans        &trans        &trans        &trans        &trans
+&trans      &mt RCMD Q    &mt RCMD W    &mt RCMD E    &mt RCMD R    &trans                         &trans       &kp C_VOL_DN  &kp C_VOL_UP  &kp C_BRI_DN  &kp C_BRI_UP  &trans
+&trans      &mt RCMD A    &mt RCMD S    &mt RCMD D    &mt RCMD F    &trans                         &mt LCMD H   &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &mt LCMD SQT
+&trans      &mt RCMD Z    &mt RCMD X    &mt RCMD C    &mt RCMD V    &mt RCMD B   &trans    &trans  &trans       &kp HOME      &kp PG_DN     &kp PG_UP     &kp END       &trans
+                          &trans        &trans        &trans        &trans       &trans    &trans  &trans       &trans        &trans        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_BRI_UP C_BRI_DN>;
