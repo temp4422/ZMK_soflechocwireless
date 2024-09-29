@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 // My Sofle v2 keymap
-// Generated with https://nickcoutsos.github.io/keymap-editor/
+// Also possible to generate with https://nickcoutsos.github.io/keymap-editor/
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -18,6 +18,14 @@
         ESC_1 {
             bindings = <&kp ESCAPE>;
             key-positions = <0 1>;
+        };
+        combo_bootloader_left {
+            bindings = <&bootloader>;
+            key-positions = <2 3 4 5>;
+        };
+        combo_bootloader_right {
+            bindings = <&bootloader>;
+            key-positions = <6 7 8 9>;
         };
     };
 
