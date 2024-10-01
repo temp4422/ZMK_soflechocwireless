@@ -67,21 +67,61 @@
             // |  `    |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  |       |
             // |       |  ! |   <  |   >  |  ^   |  #   |                   |  |   |   {   |   }   |   [  |   ]   |   \   |
             // |       |  _ |   -  |  +   |  =   |  #   |                   |  &   |   :   |   (   |   )  |   ;   |   '   |
-            // |       |  ? |   %  |  $   |  *   |  @   |        |  |       |  ~   |   "   |   ,   |   .  |   /   |       |
-            //              |      |      |      |      |        |  |       |      |       |       |      |
+            // |       |    |   ?  |  %   |  $   |  *   |   @    |  |       |  ~   |   "   |   ,   |   .  |   /   |       |
+            //              |      |      |      |      |        |  | BKSPC |      |       |       |      |
 
             bindings = <
 &kp GRAVE  &kp F1     &kp F2     &kp F3    &kp F4     &kp F5                             &kp F6     &kp F7     &kp F8     &kp F9    &kp F10   &trans
 &trans     &kp EXCL   &kp LT     &kp GT    &kp CARET  &kp HASH                           &kp PIPE   &kp LBRC   &kp RBRC   &kp LBKT  &kp RBKT  &kp BSLH
 &trans     &kp UNDER  &kp MINUS  &kp PLUS  &kp EQUAL  &kp HASH                           &kp AMPS   &kp COLON  &kp LPAR   &kp RPAR  &kp SEMI  &kp SQT
-&trans     &kp QMARK  &kp PRCNT  &kp DLLR  &kp ASTRK  &kp AT    &trans    &trans         &kp TILDE  &kp DQT    &kp COMMA  &kp DOT   &kp FSLH  &trans
+&trans     &trans     &kp QMARK  &kp PRCNT &kp DLLR   &kp ASTRK &kp AT    &trans         &kp TILDE  &kp DQT    &kp COMMA  &kp DOT   &kp FSLH  &trans
                       &trans     &trans    &trans     &trans    &trans    &kp BACKSPACE  &trans     &trans     &trans     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_BRI_UP C_BRI_DN>;
         };
 
-        /* Mostly default
+        super_layer {
+            // Layer 2 `$mo 2` - SUPER Layer
+            // ------------------------------------------------------------------------------------------------------------
+            // |     | 1    |  2   |   3   |   4   |  5   |                  |      |      |       |      |       | DEL   |
+            // |     | Q    |  W   |   E   |   R   |  T   |                  |      | VOL- | VOL+  | BRI- | BRI+  |       |
+            // |     | A    |  S   |   D   |   F   |  G   |                  |      |   <- |   v   |  ^   |  ->   |       |
+            // |     |      |  Z   |   X   |   C   |   V  |  B    |  |       |      | HOME | PGDN  | PGUP |  END  |       |
+            //              |      |       |       |      |       |  |       |      |      |       |      |
+
+            bindings = <
+&trans  &kp RG(1)  &kp RG(2)  &kp RG(3)  &kp RG(4)  &kp RG(5)                    &trans     &trans        &trans        &trans        &trans        &kp DEL
+&trans  &kp RG(Q)  &kp RG(W)  &kp RG(E)  &kp RG(R)  &kp RG(T)                    &kp RG(Y)  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_BRI_DN  &kp C_BRI_UP  &trans
+&trans  &kp RG(A)  &kp RG(S)  &kp RG(D)  &kp RG(F)  &kp RG(G)                    &kp RG(H)  &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &kp RG(S)
+&trans  &trans     &kp RG(Z)  &kp RG(X)  &kp RG(C)  &kp RG(V)  &kp RG(B) &trans  &trans     &kp HOME      &kp PG_DN     &kp PG_UP     &kp END       &trans
+                   &trans     &trans     &trans     &trans     &trans    &trans  &trans     &trans        &trans        &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_BRI_UP C_BRI_DN>;
+        };
+
+        config_layer {
+            // Layer 3 `$mo 3` - CONFIG Layer
+            // ------------------------------------------------------------------------------------------------------------
+            // |BTCLR| BT1  | BT2  |  BT3  |  BT4  |      |                  |      |      |       |      |       |       |
+            // |     |      |      |       |       |      |                  |      |      |       |      |       |       |
+            // |     |      |      |       |       |      |                  |      |      |       |      |       |       |
+            // |     |      |      |       |       |      |       |  |       |      |      |       |      |       |       |
+            //              |      |       |       |      |       |  |       |      |      |       |      |
+
+            bindings = <
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans      &trans        &trans        &trans        &trans        &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans      &trans        &trans        &trans        &trans        &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans      &trans        &trans        &trans        &trans        &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                          &trans        &trans        &trans        &trans  &trans    &trans  &trans  &trans  &trans  &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_BRI_UP C_BRI_DN>;
+        };
+
+/* Mostly default
         raise_layer {
             // ------------------------------------------------------------------------------------------------------------
             // |BTCLR| BT1  | BT2  |  BT3  |  BT4  |  BT5 |                  |      |      |       |      |       |       |
@@ -100,45 +140,5 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_BRI_UP C_BRI_DN>;
         };
 */
-
-        super_layer {
-            // Layer 2 `$mo 2` - SUPER Layer
-            // ------------------------------------------------------------------------------------------------------------
-            // |     |      |      |       |       |      |                  |      |      |       |      |       |       |
-            // |     | Q    |  W   |   E   |   R   |  T   |                  |      | VOL- | VOL+  | BRI- | BRI+  |       |
-            // |     | A    |  S   |   D   |   F   |  G   |                  |      |   <- |   v   |  ^   |  ->   |       |
-            // |     | Z    |  X   |   C   |   V   |  B   |       |  |       |      | HOME | PGDN  | PGUP |  END  |       |
-            //              |      |       |       |      |       |  |       |      |      |       |      |
-
-            bindings = <
-&trans  &trans     &trans     &trans     &trans     &trans                       &trans     &trans        &trans        &trans        &trans        &trans
-&trans  &kp RG(Q)  &kp RG(W)  &kp RG(E)  &kp RG(R)  &kp RG(T)                    &kp RG(Y)  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_BRI_DN  &kp C_BRI_UP  &trans
-&trans  &kp RG(A)  &kp RG(S)  &kp RG(D)  &kp RG(F)  &kp RG(G)                    &kp RG(H)  &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &kp RG(S)
-&trans  &kp RG(Z)  &kp RG(X)  &kp RG(C)  &kp RG(V)  &kp RG(B)  &trans    &trans  &trans     &kp HOME      &kp PG_DN     &kp PG_UP     &kp END       &trans
-                   &trans     &trans     &trans     &trans     &trans    &trans  &trans     &trans        &trans        &trans
-            >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_BRI_UP C_BRI_DN>;
-        };
-
-        config_layer {
-            // Layer 3 `$mo 2` - CONFIG Layer
-            // ------------------------------------------------------------------------------------------------------------
-            // |BTCLR| BT1  | BT2  |  BT3  |  BT4  |      |                  |      |      |       |      |       |       |
-            // |     |      |      |       |       |      |                  |      |      |       |      |       |       |
-            // |     |      |      |       |       |      |                  |      |      |       |      |       |       |
-            // |     |      |      |       |       |      |       |  |       |      |      |       |      |       |       |
-            //              |      |       |       |      |       |  |       |      |      |       |      |
-
-            bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans      &trans        &trans        &trans        &trans        &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans      &trans        &trans        &trans        &trans        &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans      &trans        &trans        &trans        &trans        &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                          &trans        &trans        &trans        &trans  &trans    &trans  &trans  &trans  &trans  &trans
-            >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_BRI_UP C_BRI_DN>;
-        };
     };
 };
