@@ -70,11 +70,11 @@
             //              |      |      |      |      |        |  | BKSPC |      |       |       |      |
 
             bindings = <
-&kp GRAVE  &kp F1     &kp F2     &kp F3     &kp F4     &kp F5                       &kp F6     &kp F7     &kp F8     &kp F9    &kp F10   &trans
-&trans     &kp EXCL   &kp LT     &kp GT     &kp CARET  &kp HASH                     &kp PIPE   &kp LBRC   &kp RBRC   &kp LBKT  &kp RBKT  &kp BSLH
-&trans     &kp UNDER  &kp MINUS  &kp PLUS   &kp EQUAL  &kp HASH                     &kp AMPS   &kp COLON  &kp LPAR   &kp RPAR  &kp SEMI  &kp SQT
-&trans     &trans     &kp QMARK  &kp PRCNT  &kp DLLR   &kp ASTRK  &kp AT    &trans  &kp TILDE  &kp DQT    &kp COMMA  &kp DOT   &kp FSLH  &trans
-                      &trans     &trans     &trans     &trans     &trans    &trans  &trans     &trans     &trans     &trans
+&kp GRAVE  &kp F1     &kp F2     &kp F3     &kp F4     &kp F5                              &kp F6     &kp F7     &kp F8     &kp F9    &kp F10   &trans
+&trans     &kp EXCL   &kp LT     &kp GT     &kp CARET  &kp HASH                            &kp PIPE   &kp LBRC   &kp RBRC   &kp LBKT  &kp RBKT  &kp BSLH
+&trans     &kp UNDER  &kp MINUS  &kp PLUS   &kp EQUAL  &kp HASH                            &kp AMPS   &kp COLON  &kp LPAR   &kp RPAR  &kp SEMI  &kp SQT
+&trans     &trans     &kp QMARK  &kp PRCNT  &kp DLLR   &kp ASTRK  &kp AT    &trans         &kp TILDE  &kp DQT    &kp COMMA  &kp DOT   &kp FSLH  &trans
+                      &trans     &trans     &trans     &trans     &trans    &kp LA(SPACE)  &trans     &trans     &trans     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_BRI_UP C_BRI_DN>;
