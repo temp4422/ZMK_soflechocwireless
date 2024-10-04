@@ -30,7 +30,7 @@
         };
 
         combo_config_layer {
-            bindings = <&mo 3>;
+            bindings = <&mo 0>;
             key-positions = <53 56>;
             slow-release;
         };
@@ -49,14 +49,28 @@
             //               |LCTRL | LALT | LCMD |SYMBOL|  ENTER |  | SPACE |SUPER | RCMD  | RALT  |RCTRL |
 
             bindings = <
+&kp GRAVE       &kp N1     &kp N2     &kp N3    &kp N4  &kp N5                           &kp N6  &kp N7    &kp N8     &kp N9     &kp N0    &kp BSPC
+&kp TAB         &kp Q      &kp W      &kp E     &kp R   &kp T                            &kp Y   &kp U     &kp I      &kp O      &kp P     &kp BSLH
+&kp ESC         &kp A      &kp S      &kp D     &kp F   &kp G                            &kp H   &kp J     &kp K      &kp L      &kp SEMI  &kp SQT
+&kp LEFT_SHIFT  &kp LSHFT  &kp Z      &kp X     &kp C   &kp V     &kp B      &kp C_MUTE  &kp N   &kp M     &kp COMMA  &kp DOT    &kp FSLH  &kp RSHFT
+                           &kp LCTRL  &kp LALT  &mo 2   &kp LGUI  &kp RET    &kp SPACE   &mo 3   &kp RCMD  &kp RALT   &kp RCTRL
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_BRI_UP C_BRI_DN>;
+        };
+
+        default_alternative {
+            bindings = <
 &kp GRAVE  &kp N1     &kp N2     &kp N3    &kp N4  &kp N5                           &kp N6  &kp N7    &kp N8     &kp N9     &kp N0    &kp BSPC
 &kp TAB    &kp Q      &kp W      &kp E     &kp R   &kp T                            &kp Y   &kp U     &kp I      &kp O      &kp P     &kp BSLH
 &kp ESC    &kp A      &kp S      &kp D     &kp F   &kp G                            &kp H   &kp J     &kp K      &kp L      &kp SEMI  &kp SQT
 &trans     &kp LSHFT  &kp Z      &kp X     &kp C   &kp V     &kp B      &kp C_MUTE  &kp N   &kp M     &kp COMMA  &kp DOT    &kp FSLH  &kp RSHFT
-                      &kp LCTRL  &kp LALT  &mo 1   &kp LGUI  &kp RET    &kp SPACE   &mo 2   &kp RCMD  &kp RALT   &kp RCTRL
+                      &kp LCTRL  &kp LALT  &mo 2   &kp LGUI  &kp RET    &kp SPACE   &mo 3   &kp RCMD  &kp RALT   &kp RCTRL
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_BRI_UP C_BRI_DN>;
+            sensor-bindings =
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
+                <&inc_dec_kp C_BRI_UP C_BRI_DN>;
         };
 
         symbol_layer {
@@ -112,7 +126,7 @@
             bindings = <
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans      &trans        &trans        &trans        &trans        &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans      &trans        &trans        &trans        &trans        &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans      &tog 0        &trans        &trans        &trans        &trans                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans      &trans        &trans        &trans        &trans        &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
                           &trans        &trans        &trans        &trans  &trans    &trans  &trans  &trans  &trans  &trans
             >;
