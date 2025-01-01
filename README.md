@@ -1,6 +1,7 @@
 # Sofle v2
 
-Try to sync with https://www.keyboard-layout-editor.com/#/gists/38ead661a787c4e628c58a382238b52b
+Example layout https://www.keyboard-layout-editor.com/#/gists/38ead661a787c4e628c58a382238b52b
+Online settings https://github.com/nickcoutsos/keymap-editor
 
 ### Sources
 
