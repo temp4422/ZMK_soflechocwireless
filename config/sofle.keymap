@@ -55,13 +55,6 @@
             bindings = <&kp LC(SPACE) &kp LA(T) &kp LC(SPACE)>;
             label = "MACRO_NUMERO_SIGN";
         };
-
-        macro_ukr_ii: ukr_ii {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <>;
-            label = "UKR_II";
-        };
     };
 
     keymap {
