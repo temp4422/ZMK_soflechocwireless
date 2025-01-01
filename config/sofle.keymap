@@ -99,7 +99,7 @@
 
             bindings = <
 &kp GRAVE  &kp F1     &kp F2       &kp F3      &kp F4        &kp F5                                            &kp F6     &kp F7                &kp F8                 &kp F9     &kp F10        &trans
-&trans     &kp EXCL   &kp LT       &kp GT      &kp CARET     &macro_test                                       &kp PIPE   &kp LBRC              &kp RBRC               &kp LBKT   &kp RBKT       &macro_ukr_ii
+&trans     &kp EXCL   &kp LT       &kp GT      &kp CARET     &macro_test                                       &kp PIPE   &kp LBRC              &kp RBRC               &kp LBKT   &kp RBKT       &macro_test
 &trans     &kp UNDER  &kp MINUS    &kp PLUS    &kp EQUAL     &kp HASH                                          &kp AMPS   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp COLON  &kp SEMI       &kp SQT
 &trans     &trans     &kp PERCENT  &kp DOLLAR  &kp ASTERISK  &kp AT_SIGN  &macro_numero_sign    &trans         &kp TILDE  &kp DQT               &kp COMMA              &kp DOT    &kp BACKSLASH  &trans
                       &trans       &trans      &trans        &trans       &trans                &kp LA(SPACE)  &trans     &trans                &trans                 &trans
