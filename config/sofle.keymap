@@ -91,10 +91,10 @@
             //              |      |      |      |      |        |  | BKSPC |      |       |       |      |
 
             bindings = <
-&kp GRAVE  &kp F1     &kp F2       &kp F3      &kp F4        &kp F5                                            &kp F6     &kp F7                &kp F8                 &kp F9     &kp F10        &trans
-&trans     &kp EXCL   &kp LT       &kp GT      &kp CARET     &macro_test                                       &kp PIPE   &kp LBRC              &kp RBRC               &kp LBKT   &kp RBKT       &macro_test
-&trans     &kp UNDER  &kp MINUS    &kp PLUS    &kp EQUAL     &kp HASH                                          &kp AMPS   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp COLON  &kp SEMI       &kp SQT
-&trans     &trans     &kp PERCENT  &kp DOLLAR  &kp ASTERISK  &kp AT_SIGN  &macro_numero_sign    &trans         &kp TILDE  &kp DQT               &kp COMMA              &kp DOT    &kp BACKSLASH  &trans
+&kp GRAVE  &kp F1     &kp F2       &kp F3      &kp F4        &kp F5                                            &kp F6     &kp F7                &kp F8                 &kp F9     &kp F10    &trans
+&trans     &kp EXCL   &kp LT       &kp GT      &kp QUESTION  &kp CARET                                         &kp PIPE   &kp LBRC              &kp RBRC               &kp LBKT   &kp RBKT   &kp NON_US_BACKSLASH
+&trans     &kp UNDER  &kp MINUS    &kp PLUS    &kp EQUAL     &kp HASH                                          &kp AMPS   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp COLON  &kp SEMI   &kp SQT
+&trans     &trans     &kp PERCENT  &kp DOLLAR  &kp ASTERISK  &kp AT_SIGN  &macro_numero_sign    &macro_test    &kp TILDE  &kp DQT               &kp COMMA              &kp DOT    &kp SLASH  &trans
                       &trans       &trans      &trans        &trans       &trans                &kp LA(SPACE)  &trans     &trans                &trans                 &trans
             >;
 
@@ -111,11 +111,11 @@
             //              |      |       |       |      |       |  |       |      |      |       |      |
 
             bindings = <
-&trans  &kp RG(N1)  &kp RG(N2)  &kp RG(N3)  &kp RG(N4)  &kp RG(N5)                       &trans     &trans        &trans        &trans        &trans        &kp DEL
-&trans  &kp RG(Q)   &kp RG(W)   &kp RG(E)   &kp RG(R)   &kp RG(T)                        &kp RG(Y)  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_BRI_DN  &kp C_BRI_UP  &trans
-&trans  &kp RG(A)   &kp RG(S)   &kp RG(D)   &kp RG(F)   &kp RG(G)                        &kp RG(H)  &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &kp RG(SINGLE_QUOTE)
-&trans  &trans      &kp RG(Z)   &kp RG(X)   &kp RG(C)   &kp RG(V)   &kp RG(B)    &trans  &trans     &kp HOME      &kp PG_DN     &kp PG_UP     &kp END       &trans
-                    &trans      &trans      &trans      &trans      &trans       &trans  &trans     &trans        &trans        &trans
+&kp LG(GRAVE)  &kp RG(N1)  &kp RG(N2)  &kp RG(N3)  &kp RG(N4)  &kp RG(N5)                       &kp LG(NUMBER_6)  &kp LG(N7)    &kp LG(N8)    &kp LG(N9)    &kp LG(N0)    &kp DEL
+&trans         &kp RG(Q)   &kp RG(W)   &kp RG(E)   &kp RG(R)   &kp RG(T)                        &kp RG(Y)         &kp C_VOL_DN  &kp C_VOL_UP  &kp C_BRI_DN  &kp C_BRI_UP  &kp RG(LEFT_BRACKET)
+&trans         &kp RG(A)   &kp RG(S)   &kp RG(D)   &kp RG(F)   &kp RG(G)                        &kp RG(H)         &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &kp RG(SINGLE_QUOTE)
+&trans         &trans      &kp RG(Z)   &kp RG(X)   &kp RG(C)   &kp RG(V)   &kp RG(B)    &trans  &kp RG(N)         &kp HOME      &kp PG_DN     &kp PG_UP     &kp END       &trans
+                           &trans      &trans      &trans      &trans      &trans       &trans  &trans            &trans        &trans        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_BRI_UP C_BRI_DN>;
